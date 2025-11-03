@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Go Drive Limo & Car Rental</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <header class="header">
+    <div class="container">
+      <h1 class="logo">Go Drive Limo & Car Rental</h1>
+      <nav>
+        <a href="#home">Home</a>
+        <a href="#services">Services</a>
+        <a href="#fleet">Fleet</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <section id="home" class="hero">
+    <div class="container">
+      <h2>Luxury Rides. Reliable Service.</h2>
+      <p>From airport transfers to special events — ride in comfort and arrive in style with Go Drive Limo & Car Rental.</p>
+      <a href="#contact" class="btn">Book Your Ride</a>
+    </div>
+  </section>
+
+  <section id="services" class="section">
+    <div class="container">
+      <h3>Our Services</h3>
+      <div class="cards">
+        <div class="card">
+          <h4>Airport Transfers</h4>
+          <p>On-time pickup and drop-off to all major airports across the GTA.</p>
+        </div>
+        <div class="card">
+          <h4>Corporate Travel</h4>
+          <p>Professional, reliable service for your meetings, clients, and events.</p>
+        </div>
+        <div class="card">
+          <h4>Weddings & Events</h4>
+          <p>Luxury limousines and SUVs for your special day — with style and class.</p>
+        </div>
+        <div class="card">
+          <h4>Car Rentals</h4>
+          <p>Affordable, clean, and well-maintained cars available for daily or weekly rental.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="fleet" class="section alt">
+    <div class="container">
+      <h3>Our Fleet</h3>
+      <p>Choose from our wide range of vehicles — from executive sedans to stretch limos and SUVs. Every vehicle is regularly serviced and spotless for your comfort.</p>
+      <img src="https://images.unsplash.com/photo-1618848941867-a9b3d3fd26b0?auto=format&fit=crop&w=1200&q=60" alt="Luxury Car Fleet" class="fleet-img">
+    </div>
+  </section>
+
+  <section id="contact" class="section">
+    <div class="container">
+      <h3>Contact Us</h3>
+      <p>📍 Mississauga, Ontario<br>
+      📞 <a href="tel:+16471234567">647-123-4567</a><br>
+      ✉️ <a href="mailto:info@godrivelimo.com">info@godrivelimo.com</a></p>
+      <a href="mailto:info@godrivelimo.com" class="btn">Book Now</a>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <p>© <span id="year"></span> Go Drive Limo & Car Rental — All Rights Reserved</p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
+:root {
+  --accent: #00bfa6;
+  --bg: #0a0f18;
+  --text: #f5f7fa;
+  --light: #d1d5db;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  color: var(--text);
+  background: var(--bg);
+  line-height: 1.6;
+}
+.container { max-width: 1000px; margin: 0 auto; padding: 24px; }
+
+header {
+  background: rgba(0,0,0,0.8);
+  position: sticky; top: 0; z-index: 1000;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.4);
+}
+.logo { font-weight: 600; margin: 0; color: var(--accent); }
+nav a {
+  color: var(--light);
+  text-decoration: none;
+  margin-left: 16px;
+  transition: color 0.2s;
+}
+nav a:hover { color: var(--accent); }
+
+.hero {
+  background: url('https://images.unsplash.com/photo-1525609004556-c46c7d6cf023?auto=format&fit=crop&w=1200&q=60') center/cover;
+  text-align: center;
+  padding: 120px 20px;
+}
+.hero h2 { font-size: 42px; margin-bottom: 12px; }
+.hero p { font-size: 18px; max-width: 700px; margin: 0 auto 24px; }
+
+.btn {
+  background: var(--accent);
+  color: #000;
+  padding: 12px 20px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+}
+.btn:hover { opacity: 0.9; }
+
+.section { padding: 60px 20px; }
+.section.alt { background: #111827; }
+.section h3 { color: var(--accent); text-align: center; margin-bottom: 32px; }
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+.card {
+  background: rgba(255,255,255,0.05);
+  padding: 20px;
+  border-radius: 12px;
+  text-align: center;
+  transition: transform 0.2s;
+}
+.card:hover { transform: translateY(-4px); }
+
+.fleet-img {
+  width: 100%;
+  border-radius: 10px;
+  margin-top: 20px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+}
+
+.footer {
+  background: #0b0f16;
+  text-align: center;
+  padding: 20px;
+  color: var(--light);
+  font-size: 14px;
+}
+@media (max-width: 640px) {
+  .hero h2 { font-size: 28px; }
+  nav { display: block; margin-top: 10px; }
+}
